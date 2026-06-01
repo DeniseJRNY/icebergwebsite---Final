@@ -4199,3 +4199,118 @@ a { color: inherit; text-decoration: none; }
   .agent-grid { grid-template-columns: 1fr; }
   .agent-card { padding: 24px 22px; }
 }
+
+/* ========== 24 — HERO AGENT BULLETS ========== */
+.hero-agent-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 32px 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px 24px;
+}
+.hero-agent-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text-200);
+}
+.hero-agent-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--green);
+  box-shadow: 0 0 8px rgba(34,197,94,0.5);
+  flex-shrink: 0;
+}
+@media (max-width: 768px) {
+  .hero-agent-list { grid-template-columns: 1fr; gap: 8px; }
+}
+
+/* ========== 25 — TESTIMONIAL GRID (4 quotes) ========== */
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+.testimonial-card {
+  background: linear-gradient(180deg, var(--bg-700) 0%, var(--bg-800) 100%);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s, border-color 0.3s;
+}
+.testimonial-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--border-green);
+}
+.testimonial-card-quote {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text-white);
+  font-weight: 500;
+  font-style: italic;
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+.testimonial-card-author {
+  padding-top: 16px;
+  border-top: 1px dashed var(--border);
+}
+.testimonial-card-name {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--green);
+}
+@media (max-width: 768px) {
+  .testimonial-grid { grid-template-columns: 1fr; }
+  .testimonial-card { padding: 22px; }
+}
+
+/* ========== 26 — LOGO (icon SVG + wordmark text) ========== */
+.nav-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--text-white);
+}
+.nav-logo-img {
+  height: 32px;
+  width: 32px;
+  display: block;
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+.nav-logo-word {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: -0.3px;
+  color: var(--text-white);
+}
+.footer-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+.footer-logo .nav-logo-img {
+  height: 28px;
+  width: 28px;
+}
+.footer-logo .nav-logo-word {
+  font-size: 16px;
+}
+@media (max-width: 768px) {
+  .nav-logo-img { height: 28px; width: 28px; }
+  .nav-logo-word { font-size: 16px; }
+}
