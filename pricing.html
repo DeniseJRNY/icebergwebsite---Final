@@ -8,6 +8,124 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,700&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+<style>
+  /* Pricing overview - two tier cards */
+  .pricing-hero { padding: 96px 0 32px; text-align: center; }
+  .pricing-hero h1 { font-size: 52px; line-height: 1.1; letter-spacing: -1.5px; margin-bottom: 18px; }
+  .pricing-hero p { font-size: 18px; color: var(--text-300); max-width: 640px; margin: 0 auto; line-height: 1.55; }
+
+  .tier-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    margin: 56px auto 64px;
+    max-width: 1080px;
+  }
+  .tier-card {
+    background: linear-gradient(180deg, var(--bg-700) 0%, var(--bg-800) 100%);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 40px 36px;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+  }
+  .tier-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--border-green);
+    box-shadow: 0 24px 60px rgba(0,0,0,0.35);
+  }
+  .tier-card-eyebrow {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: var(--green);
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .tier-card h2 {
+    font-size: 30px;
+    line-height: 1.15;
+    letter-spacing: -0.5px;
+    margin-bottom: 10px;
+    color: var(--text-white);
+  }
+  .tier-card-price {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--green);
+    margin-bottom: 18px;
+  }
+  .tier-card-desc {
+    color: var(--text-300);
+    font-size: 15px;
+    line-height: 1.65;
+    margin-bottom: 28px;
+  }
+  .tier-card-list { list-style: none; padding: 0; margin: 0 0 32px 0; }
+  .tier-card-list li {
+    color: var(--text-200);
+    font-size: 14.5px;
+    line-height: 1.55;
+    padding: 10px 0;
+    padding-left: 26px;
+    position: relative;
+    border-top: 1px dashed var(--border);
+  }
+  .tier-card-list li:first-child { border-top: none; }
+  .tier-card-list li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 16px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: rgba(34,197,94,0.15);
+    border: 1px solid var(--green);
+  }
+  .tier-card-list li::after {
+    content: "";
+    position: absolute;
+    left: 4px;
+    top: 21px;
+    width: 6px;
+    height: 3px;
+    border-left: 2px solid var(--green);
+    border-bottom: 2px solid var(--green);
+    transform: rotate(-45deg);
+  }
+  .tier-card-cta {
+    margin-top: auto;
+  }
+  .tier-card-cta .btn-primary,
+  .tier-card-cta .btn-ghost {
+    display: block;
+    text-align: center;
+    width: 100%;
+  }
+  .tier-card-cta .btn-ghost {
+    padding: 14px 22px;
+    border: 1px solid var(--border-green);
+    border-radius: 10px;
+    color: var(--green);
+    text-decoration: none;
+    font-weight: 600;
+    transition: background 0.2s, color 0.2s;
+  }
+  .tier-card-cta .btn-ghost:hover { background: rgba(34,197,94,0.08); }
+
+  .pricing-faq-mini { text-align: center; padding: 24px 0 80px; color: var(--text-400); font-size: 14px; }
+  .pricing-faq-mini a { color: var(--green); text-decoration: none; }
+  .pricing-faq-mini a:hover { text-decoration: underline; }
+
+  @media (max-width: 768px) {
+    .tier-grid { grid-template-columns: 1fr; }
+    .pricing-hero h1 { font-size: 38px; }
+    .tier-card { padding: 32px 28px; }
+  }
+</style>
 </head>
 <body>
 
@@ -21,6 +139,7 @@
       <a href="intro-paths.html">Intro paths - coming soon</a>
       <a href="try-it-live.html">Try it live</a>
       <a href="why-iceberg.html">Why Iceberg</a>
+      <a href="pricing.html" class="active">Pricing</a>
     </div>
     <div class="nav-ctas">
       <a href="https://concierge.iceberg.software/auth/login" class="btn-ghost">Login</a>
@@ -30,255 +149,60 @@
   </div>
 </nav>
 
-<div style="padding-top:80px"></div>
-
-<!-- ========== PRICING HERO (redesigned) ========== -->
+<!-- HERO -->
 <section class="pricing-hero">
-  <div class="pricing-hero-glow"></div>
   <div class="container">
-    <div class="pricing-hero-grid">
-      <div class="pricing-hero-copy fade-up">
-        <div class="section-label">PRICING</div>
-        <h1 class="pricing-hero-title">Pricing that <span class="green">scales with your deals</span>, not against you.</h1>
-        <p class="pricing-hero-sub">$2 per contact, per month. Pay only for who you actually use. Contacts carry forward between mandates &mdash; enriched, re-scored, and ready for your next deal.</p>
-        <div class="pricing-hero-ctas">
-          <a href="https://concierge.iceberg.software/auth/signup" class="btn-primary">Send a mandate &rarr;</a>
-          <a href="#pilot" class="btn-secondary">Start a 30-day pilot</a>
-        </div>
-        <div class="pricing-hero-trust">
-          <div class="pricing-hero-trust-item">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-            <span>No seat fees</span>
-          </div>
-          <div class="pricing-hero-trust-item">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-            <span>No platform fees</span>
-          </div>
-          <div class="pricing-hero-trust-item">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-            <span>No commitment</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="pricing-hero-card fade-up" style="animation-delay:0.15s">
-        <div class="pricing-hero-card-chrome">
-          <div class="pricing-hero-card-dots"><span></span><span></span><span></span></div>
-          <span class="pricing-hero-card-chrome-label">live mandate · pricing</span>
-        </div>
-        <div class="pricing-hero-card-body">
-          <div class="pricing-hero-card-eyebrow">Per active contact, per month</div>
-          <div class="pricing-hero-card-price">
-            <span class="pricing-hero-currency">$</span><span class="pricing-hero-amount">2</span>
-            <span class="pricing-hero-period">/ month</span>
-          </div>
-          <div class="pricing-hero-card-sub">Only billed while the mandate is live. Paused contacts stop the clock.</div>
-
-          <div class="pricing-hero-card-divider"></div>
-
-          <div class="pricing-hero-card-rows">
-            <div class="pricing-hero-card-row">
-              <span class="pricing-hero-card-label">Contacts per mandate</span>
-              <span class="pricing-hero-card-value">Up to 150</span>
-            </div>
-            <div class="pricing-hero-card-row">
-              <span class="pricing-hero-card-label">Cost per live mandate</span>
-              <span class="pricing-hero-card-value">$300 / mo</span>
-            </div>
-            <div class="pricing-hero-card-row">
-              <span class="pricing-hero-card-label">Contacts roll forward</span>
-              <span class="pricing-hero-card-value green">Forever</span>
-            </div>
-          </div>
-
-          <div class="pricing-hero-card-compare">
-            <div class="pricing-hero-compare-row">
-              <span class="pricing-hero-compare-label">PitchBook seat</span>
-              <span class="pricing-hero-compare-strike">$40,000+ / yr</span>
-            </div>
-            <div class="pricing-hero-compare-row pricing-hero-compare-win">
-              <span class="pricing-hero-compare-label green">Iceberg, per mandate</span>
-              <span class="pricing-hero-compare-price green">$300 / mo</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- cost-of-doing-deals narrative pulled below the fold -->
-    <div class="pricing-narrative fade-up">
-      <p><strong>The real comparison isn't tool vs tool. It's cost of doing deals.</strong> PitchBook costs $40K+ per head, per year &mdash; plus two people for four days to build a universe before a single email goes out. With Iceberg, a full mandate costs $300/month while it's live. Those contacts don't reset at the end. They carry forward, stay enriched, and get re-scored against your next deal automatically.</p>
-      <p>You're not buying a database. You're building a contact layer that's custom to you &mdash; and you only pay for who you actually use.</p>
-    </div>
+    <h1>Pick the model that <span class="green">fits your deal.</span></h1>
+    <p>Two ways to work with Iceberg. Pay-per-run when you need a buyer universe fast, or apply to the curated deal network and pay only on close.</p>
   </div>
 </section>
 
-<!-- ========== PILOT ========== -->
-<section id="pilot" class="aida-section" style="background:var(--bg-base);">
+<!-- TIER CARDS -->
+<section>
   <div class="container">
-    <div class="pricing-two-col fade-up">
-      <div class="pricing-card-large pilot-card">
-        <div class="pricing-card-eyebrow">START HERE</div>
-        <h3>30-Day Pilot</h3>
-        <div class="pricing-card-price">Free</div>
-        <ul class="pricing-features">
-          <li>Black book mapping (up to 100 contacts)</li>
-          <li>1 live mandate</li>
-          <li>20 initial contacts for feedback</li>
-          <li>Up to 150 continuously reprioritised contacts</li>
+    <div class="tier-grid">
+
+      <div class="tier-card">
+        <div class="tier-card-eyebrow">PAY-AS-YOU-GO</div>
+        <h2>On-Demand Sourcing</h2>
+        <div class="tier-card-price">$3.30 per contact + GST</div>
+        <p class="tier-card-desc">Send a mandate, choose your scope, and we deliver a ranked, verified buyer or investor universe to your Iceberg workspace within 24 hours. No commitment. Order online.</p>
+        <ul class="tier-card-list">
+          <li>Up to 150 contacts per run, multiple runs per mandate</li>
+          <li>Deal-led discovery, contact enrichment, ranked list</li>
+          <li>Delivered to your Iceberg workspace within 24 hours</li>
+          <li>One-off Stripe checkout, no subscription</li>
         </ul>
-        <a href="https://concierge.iceberg.software/auth/signup" class="btn-primary" style="margin-top:24px;display:inline-block;">Start your pilot &rarr;</a>
-      </div>
-      <div class="pricing-card-detail">
-        <h4>How contacts work</h4>
-        <p>All contacts created during the pilot are tracked.</p>
-        <p>If you decide to continue, these contacts roll directly into your active network and are billed as part of your ongoing subscription.</p>
-        <div class="pricing-callout-block">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--green)" stroke="none" style="flex-shrink:0;margin-top:2px;"><polygon points="12,2 2,22 22,22"/></svg>
-          <p style="margin:0;font-size:17px;font-weight:600;color:var(--text-white);">You are not starting from scratch. The work carries forward.</p>
+        <div class="tier-card-cta">
+          <a href="on-demand.html" class="btn-primary">View pricing &amp; order &rarr;</a>
         </div>
       </div>
-    </div>
-  </div>
-</section>
 
-<!-- ========== ONGOING SUBSCRIPTION ========== -->
-<section class="aida-section" style="background:var(--bg-800);">
-  <div class="container">
-    <div class="aida-centered fade-up">
-      <div class="section-label">POST-PILOT</div>
-      <h2>Ongoing Subscription</h2>
-      <p class="pricing-sub" style="text-align:center;margin:16px auto 40px;">Each mandate generates up to 150 active contacts. Pay only for who you use. Contacts carry forward to your next deal &mdash; enriched, re-scored, ready.</p>
-    </div>
-    <div class="pricing-layers fade-up">
-      <!-- Layer 1: Black Book -->
-      <div class="pricing-card-large layer-card">
-        <div class="pricing-layer-num">1</div>
-        <h3>Your Network <span style="color:var(--text-300);font-weight:400;">(Black Book)</span></h3>
-        <p class="pricing-layer-desc">We structure, enrich, and continuously improve your existing relationships.</p>
-        <div class="pricing-card-price">$2 <span>per contact per month</span></div>
-        <div class="pricing-card-note">Choose how many of your existing contacts you want actively managed.</div>
-        <ul class="pricing-features">
-          <li>Continuously reprioritised contacts</li>
-          <li>Mandate relevance scoring</li>
-          <li>Intro path mapping</li>
-          <li>Market activity monitoring</li>
-          <li>Cross-mandate intelligence</li>
+      <div class="tier-card">
+        <div class="tier-card-eyebrow">SUCCESS FEE ONLY</div>
+        <h2>Curated Deal Network</h2>
+        <div class="tier-card-price">5% of your success fee, on close</div>
+        <p class="tier-card-desc">Apply to join the network. We deliver sourcing, enrichment, warm path mapping and introductions weekly across your active mandates. No upfront cost, no retainer.</p>
+        <ul class="tier-card-list">
+          <li>Weekly sourcing, enrichment and warm path delivery</li>
+          <li>Iceberg workspace, CRM and outreach included</li>
+          <li>One city at a time, ten non-competing advisers each</li>
+          <li>Paid only when a mandate closes</li>
         </ul>
-      </div>
-      <!-- Layer 2: Mandate Execution -->
-      <div class="pricing-card-large layer-card featured">
-        <div class="pricing-badge">Per mandate</div>
-        <div class="pricing-layer-num">2</div>
-        <h3>Mandate Execution Layer</h3>
-        <p class="pricing-layer-desc">For each active mandate, we build and run a live, prioritised investor/buyer universe.</p>
-        <div class="pricing-card-price">$300 <span>per month, per mandate</span></div>
-        <div class="pricing-card-note">Up to 150 active contacts per mandate. Contacts are active, not fixed &mdash; swap in and out as your process evolves.</div>
-        <ul class="pricing-features">
-          <li>Live prioritised investor/buyer universe</li>
-          <li>Dynamic re-ranking as the deal progresses</li>
-          <li>Outreach execution and tracking</li>
-          <li>Contacts rotate as your process evolves</li>
-        </ul>
-      </div>
-    </div>
-    <!-- Worked Example -->
-    <div class="pricing-example fade-up" style="margin-top:40px;text-align:center;">
-      <div style="display:inline-block;background:var(--bg-700);border:1px solid var(--border);border-radius:12px;padding:24px 36px;max-width:700px;">
-        <p style="color:var(--text-300);font-size:13px;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:8px;">Worked example</p>
-        <p style="color:var(--text-white);font-size:18px;font-weight:600;">1 active mandate, 150 contacts = <span style="color:var(--green);">$300/month</span></p>
-        <p style="color:var(--text-200);font-size:14px;margin-top:8px;line-height:1.6;">Run 6 mandates a year and your black book builds to 700+ continuously enriched contacts &mdash; at a fraction of what a single PitchBook seat costs.</p>
-      </div>
-    </div>
-    <!-- Comparison anchor -->
-    <div class="fade-up" style="margin-top:32px;text-align:center;max-width:700px;margin-left:auto;margin-right:auto;">
-      <div style="padding:20px 28px;background:var(--bg-700);border:1px solid var(--border);border-radius:12px;">
-        <p style="color:var(--text-200);font-size:15px;margin:0;line-height:1.6;"><strong style="color:var(--text-white);">PitchBook:</strong> $40K+ per head per year, plus analyst time to build the universe.<br><strong style="color:var(--green);">Iceberg:</strong> $300/month per active mandate. Contacts carry forward. Cost scales with your activity, not against it.</p>
-      </div>
-    </div>
-    <!-- "You don't need the whole database" callout -->
-    <div class="fade-up" style="margin-top:24px;text-align:center;max-width:600px;margin-left:auto;margin-right:auto;">
-      <div style="padding:18px 24px;background:rgba(34,197,94,0.06);border:1px solid var(--border-green);border-radius:10px;">
-        <p style="color:var(--text-white);font-size:15px;font-weight:500;margin:0;line-height:1.6;">You don't need the whole database. You need the right 150 contacts, perfectly enriched, for your exact deal.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ========== ENTERPRISE TIER ========== -->
-<section class="aida-section" style="background:var(--bg-base);">
-  <div class="container">
-    <div class="pricing-card-large layer-card fade-up" style="max-width:800px;margin:0 auto;border:1px solid var(--border-green);">
-      <div class="pricing-badge" style="background:var(--green);color:var(--bg-base);">Enterprise</div>
-      <h3>Enterprise</h3>
-      <p class="pricing-layer-desc">For firms running multiple concurrent mandates with existing tool stacks.</p>
-      <ul class="pricing-features" style="margin-top:20px;">
-        <li>Bulk contact bundles across the whole firm</li>
-        <li>Multi-seat access with shared network graph</li>
-        <li>Replaces PitchBook, Cap IQ, RocketReach, and enrichment tools in a single subscription</li>
-        <li>Cross-mandate intelligence from day one</li>
-        <li>Dedicated onboarding and mandate support</li>
-        <li>Custom data integrations (CRM, Ansarada, Grata)</li>
-      </ul>
-      <p style="color:var(--green);font-size:14px;font-weight:500;margin-top:16px;">Advisors typically cancel 3 to 5 existing subscriptions within 90 days of going live. Because Iceberg replaces them.</p>
-      <a href="https://concierge.iceberg.software/auth/signup" class="btn-primary" style="margin-top:16px;display:inline-block;">Send a mandate &rarr;</a>
-    </div>
-  </div>
-</section>
-
-<!-- ========== COMPOUNDING ANGLE ========== -->
-<section class="aida-section" style="background:var(--bg-800);">
-  <div class="container">
-    <div class="aida-centered fade-up" style="max-width:700px;margin:0 auto;text-align:center;">
-      <div class="section-label">THE COMPOUNDING ADVANTAGE</div>
-      <h2>Most tools reset. Every deal starts from zero.</h2>
-      <p class="aida-body" style="margin-top:20px;">With Iceberg, each mandate adds to your black book. Contacts stay live. Intelligence builds. By your sixth mandate, your network is working for you before you even start outreach.</p>
-      <div style="margin-top:24px;padding:18px 24px;background:rgba(34,197,94,0.06);border:1px solid var(--border-green);border-radius:10px;display:inline-block;">
-        <p style="color:var(--text-white);font-size:17px;font-weight:600;margin:0;">That's not a subscription. That's an asset.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ========== THE PRECISION GAP ========== -->
-<section class="aida-section" style="background:var(--bg-base);">
-  <div class="container">
-    <div class="pricing-two-col fade-up" style="align-items:center;">
-      <div>
-        <div class="section-label">THE PRECISION GAP</div>
-        <h2>Org-level judgement is table stakes. Contact-level precision is defensible.</h2>
-        <p class="aida-body" style="margin-top:20px;">Any AI tool can identify Brunswick Corporation as the right acquirer type. It cannot reliably tell you:</p>
-        <ul class="moat-list">
-          <li>The exact VP Corporate Development to reach</li>
-          <li>A verified work email</li>
-          <li>Active LinkedIn evidence</li>
-          <li>Asia-Pacific M&amp;A history</li>
-        </ul>
-        <p class="pricing-highlight" style="margin-top:20px;">That is the moat. Scale, structure, and verified identity.</p>
-      </div>
-      <div class="moat-visual">
-        <div class="moat-card moat-card-org fade-up">
-          <div class="moat-card-label">What AI can do</div>
-          <p>"Brunswick Corporation is a strong acquirer for marine services companies"</p>
-        </div>
-        <div class="moat-card moat-card-contact fade-up">
-          <div class="moat-card-label">What Iceberg adds</div>
-          <div class="moat-contact-row">
-            <div><strong>Sarah Chen</strong><br><span>VP Corp Dev, Brunswick Corp</span></div>
-            <span class="pathway-card-score" style="font-size:14px;">96</span>
-          </div>
-          <div class="moat-contact-details">
-            <span>&#10003; Verified email</span>
-            <span>&#10003; Active on LinkedIn</span>
-            <span>&#10003; 3 APAC deals (2023&ndash;25)</span>
-            <span>&#10003; Warm intro via J. Walsh</span>
-          </div>
+        <div class="tier-card-cta">
+          <a href="curated-deal-network.html" class="btn-ghost">See how it works &rarr;</a>
         </div>
       </div>
+
     </div>
+
+    <p class="pricing-faq-mini">
+      Not sure which one? <a href="https://concierge.iceberg.software/auth/signup">Send a mandate</a> and we'll point you to the right model.
+    </p>
   </div>
 </section>
 
+<!-- FOOTER -->
 <footer class="footer">
   <div class="container">
     <div class="footer-inner">
@@ -287,6 +211,7 @@
       </div>
       <div class="footer-links">
         <a href="how-it-works.html">How it works</a>
+        <a href="pricing.html">Pricing</a>
         <a href="#">Data Security</a>
         <a href="#">Contact</a>
       </div>
@@ -294,6 +219,11 @@
     </div>
   </div>
 </footer>
+
+<!-- STICKY MOBILE CTA -->
+<div class="sticky-mobile-cta">
+  <a href="https://concierge.iceberg.software/auth/signup" class="btn-primary">Send a mandate &rarr;</a>
+</div>
 
 <script src="main.js"></script>
 </body>
