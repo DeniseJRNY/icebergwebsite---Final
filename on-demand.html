@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Iceberg — On-Demand Sourcing</title>
-<meta name="description" content="On-Demand buyer and investor universes for sell-side advisers. $3.30 per contact, up to 150 contacts per run. Order and pay online.">
+<title>Iceberg · On-Demand Sourcing</title>
+<meta name="description" content="The full mandate pack as a fee-for-service engagement: your network mapped, the buyer universe sourced, and warm network intros. Custom priced, scoped before any work starts.">
 <style>
 /* ============================================================
    Iceberg — design system (per brand spec, March 2026)
@@ -307,15 +307,12 @@ details.terms .terms-body strong{color:var(--text-3)}
 </nav>
 
 <header class="hero wrap" style="padding-bottom:24px">
-  <span class="eyebrow reveal">On-Demand Sourcing</span>
-  <h1 class="reveal" style="font-size:clamp(34px,5.6vw,56px)">Top-tier buyer universes,<br><em style="color:var(--green);font-style:italic">on demand.</em></h1>
-  <p class="sub reveal">Send us your mandate. Choose how many contact types you want covered and how many runs of up to 150 contacts each. We run deal-led discovery, verify every contact, and deliver a ranked list to your Iceberg workspace within 24 hours. $3.30 per contact + GST.</p>
+  <span class="eyebrow reveal">Fee for service</span>
+  <h1 class="reveal" style="font-size:clamp(34px,5.6vw,56px)">The full mandate pack,<br><em style="color:var(--green);font-style:italic">done for you.</em></h1>
+  <p class="sub reveal">Send us the mandate. We map your entire network, source the buyer universe on top, and surface who in the Iceberg network can introduce you. One engagement, custom priced and quoted before any work starts. No success fee, you keep everything.</p>
   <div class="reveal" style="display:flex;gap:12px;justify-content:center;align-items:center;flex-wrap:wrap;margin-top:22px">
-    <div class="region" role="group" aria-label="Region">
-      <button data-r="au">Australia</button>
-      <button data-r="us">United States</button>
-    </div>
-    <span class="muted" style="font-size:13px">Switches governing law only.</span>
+    <a class="btn btn-primary btn-lg" href="https://meetings.hubspot.com/jfairweather" target="_blank" rel="noopener">Book a call to scope →</a>
+    <a class="btn btn-ghost btn-lg" href="#offering">What's in the pack →</a>
   </div>
 </header>
 
@@ -326,354 +323,128 @@ details.terms .terms-body strong{color:var(--text-3)}
   </blockquote>
 </section>
 
-<section class="section wrap" id="how" style="padding-top:6px">
-  <div class="pipe reveal" style="grid-template-columns:repeat(3,1fr)">
-    <div class="step"><div class="n">01</div><h4>You send</h4><p>Your mandate, deal context, who you think the best buyers are, and your blackbook CSV.</p></div>
-    <div class="step"><div class="n">02</div><h4>You choose scope</h4><p>Pick the contact types that matter (strategic, PE, family office, VC) and how many runs of 150 each.</p></div>
-    <div class="step on"><div class="n">03</div><h4>We deliver in 24h</h4><p>A ranked, verified list in your workspace, plus a review call. Export to CSV anytime.</p></div>
+<section class="section wrap" id="offering" style="padding-top:6px;padding-bottom:0">
+  <span class="label reveal">The offering</span>
+  <h2 class="reveal" style="font-size:30px;margin-bottom:8px">Three things. Take one, or all three.</h2>
+  <p class="muted reveal" style="max-width:780px">One custom-priced engagement per mandate. Pick the piece you need, or the whole pack.</p>
+  <div class="card reveal" style="margin-top:24px">
+    <div class="feature"><div><h4>1 · Map your entire network</h4></div><p>Your historical deals and contacts, cleaned, enriched and mapped for warm paths. You see who you already know who can reach each target.</p></div>
+    <div class="feature"><div><h4>2 · Source the mandate universe on top</h4></div><p>A fresh, deal-led universe of buyers or investors built to your brief, beyond the names already in your book.</p></div>
+    <div class="feature"><div><h4>3 · Tap the wider network</h4></div><p>See who in the Iceberg network can introduce you to your ideal buyer or investor through a warm relationship, on double opt-in.</p></div>
+  </div>
+  <div class="card card-hl reveal" style="margin-top:22px;text-align:center;padding:30px 28px">
+    <div class="price-big" style="font-size:30px">Custom priced</div>
+    <p class="price-sub" style="font-size:15px;margin-top:8px">Scoped and quoted before any work starts. The full pack replaces roughly 68 hours, about $14k of analyst work per mandate.</p>
   </div>
 </section>
 
-<section class="section wrap" style="padding-top:4px">
-  <div id="banner-ok" class="banner ok">Thanks, your order is in and payment was received. We will be in touch within 24 hours.</div>
-  <div id="banner-cancel" class="banner warn">Payment was cancelled. Your details are saved below, adjust anything and try again when ready.</div>
-  <div id="banner-err" class="banner err"></div>
-
-  <div class="card card-hl reveal">
-    <span class="label">Configure your order</span>
-    <h2 style="font-size:27px;margin-bottom:8px">Build your universe</h2>
-    <p class="muted" style="margin-bottom:26px">$3.30 per contact (+ GST). One run = up to 150 contacts of one contact type. Quality floor at 50/100 match score, so it is up to 150 per run, not always 150. Pick how many contact types matter for your deal, and how many runs per type.</p>
-
-    <form id="order-form" name="ondemand-order" method="POST" action="/" data-netlify="true" netlify-honeypot="bot-field" enctype="multipart/form-data">
-      <input type="hidden" name="form-name" value="ondemand-order">
-      <p class="hide"><label>Don't fill this out: <input name="bot-field"></label></p>
-      <input type="hidden" name="runs" id="f-runs" value="1">
-      <input type="hidden" name="contact_types" id="f-types" value="1">
-      <input type="hidden" name="order_total_aud" id="f-total" value="495">
-      <input type="hidden" name="estimated_contacts" id="f-contacts" value="150">
-
-      <div class="cfg-grid" style="margin-bottom:6px">
-        <div>
-          <span class="steplabel">Contact types</span>
-          <div class="stepper" data-key="types">
-            <button type="button" data-step="-1" aria-label="decrease">−</button>
-            <span class="val" id="types-val">1</span>
-            <button type="button" data-step="1" aria-label="increase">+</button>
-          </div>
-          <div class="hint">e.g. strategic acquirers, PE, family office, VC. 1 to 20.</div>
-        </div>
-        <div>
-          <span class="steplabel">Runs per type</span>
-          <div class="stepper" data-key="runs">
-            <button type="button" data-step="-1" aria-label="decrease">−</button>
-            <span class="val" id="runs-val">1</span>
-            <button type="button" data-step="1" aria-label="increase">+</button>
-          </div>
-          <div class="hint">Each run adds up to 150 more contacts in that type. 1 to 20.</div>
-        </div>
-      </div>
-
-      <div class="total-line" style="margin-top:16px">
-        <div>
-          <div style="font-family:var(--font-head);font-weight:700;font-size:15px;color:#fff" id="calc-desc">1 type × 1 run · up to 150 contacts</div>
-          <div class="muted" style="font-size:13px">Prices in AUD. Tax calculated at checkout by location.</div>
-        </div>
-        <div style="text-align:right">
-          <div class="big" id="calc-total">$495</div>
-          <div class="muted" style="font-size:13px">+ GST</div>
-        </div>
-      </div>
-
-      <div style="margin-top:24px">
-        <span class="steplabel">Name your contact type<span id="cat-plural"></span></span>
-        <div id="category-inputs" class="cat-grid"></div>
-        <div class="hint" style="margin-top:8px">One field per contact type you set above. Tell us what each one is so we can scope the right search.</div>
-      </div>
-
-      <hr class="div" style="margin:26px 0">
-
-      <h3 style="font-size:18px;margin:0 0 16px">Your details &amp; the mandate</h3>
-      <div class="cfg-grid">
-        <div class="field"><label>Your name</label><input type="text" name="name" required placeholder="Full name"></div>
-        <div class="field"><label>Work email</label><input type="email" name="email" required placeholder="you@firm.com"></div>
-      </div>
-      <div class="cfg-grid">
-        <div class="field"><label>Phone or WhatsApp <span class="muted" style="font-weight:400">(optional)</span></label><input type="tel" name="phone" placeholder="+61 4xx xxx xxx"></div>
-        <div class="field"><label>Firm</label><input type="text" name="firm" placeholder="Advisory firm"></div>
-      </div>
-      <div class="field">
-        <label>The mandate &amp; deal context</label>
-        <textarea name="mandate_context" required placeholder="The deal, sector angle, geography, valuation expectations or fundraise structure, and which contact types matter most. None of this needs to be perfect."></textarea>
-      </div>
-            <div class="field">
-        <label>Include phone numbers in the universe?</label>
-        <div class="toggle-grp" data-target="f-phones" style="display:flex;gap:8px;margin-top:6px;flex-wrap:wrap">
-          <button type="button" data-v="yes" class="active">Yes, include where available</button>
-          <button type="button" data-v="no">Emails &amp; LinkedIn only</button>
-        </div>
-        <input type="hidden" name="include_phones" id="f-phones" value="yes">
-        <div class="hint">Phone numbers come from a separate verified provider; we only include them where confidently sourced.</div>
-      </div>
-      <div class="field">
-        <label>Attach briefs, decks, IMs, or your blackbook CSV (optional)</label>
-        <input type="file" name="attachment[]" multiple>
-        <div class="hint">Multiple files OK. Hold Cmd/Ctrl in the picker to select more than one. You can also email anything large to jock@iceberg.software after ordering.</div>
-      </div>
-
-      <button type="submit" class="btn btn-primary btn-lg btn-block" id="submit-btn" style="margin-top:10px">
-        Submit order &amp; pay <span id="btn-amount">$495</span> →
-      </button>
-      <p class="muted center" style="font-size:12.5px;margin-top:14px">Secure Stripe checkout for the exact amount. Currency shown in your local equivalent; tax applied by location. Your order details are sent to the Iceberg team on submit.</p>
-    </form>
+<section class="section wrap" id="how" style="padding-top:48px;padding-bottom:0">
+  <div class="pipe reveal" style="grid-template-columns:repeat(3,1fr)">
+    <div class="step"><div class="n">01</div><h4>You send</h4><p>Your mandate, deal context, who you think the best buyers are, and your blackbook if you have one.</p></div>
+    <div class="step"><div class="n">02</div><h4>We scope and quote</h4><p>We confirm what you want, one piece or the full pack, and quote it before any work starts.</p></div>
+    <div class="step on"><div class="n">03</div><h4>We deliver</h4><p>The pack lands in your workspace, enriched, tiered and ready to action, with a review call. Export to CSV anytime.</p></div>
   </div>
+</section>
 
-  <div class="grid grid-2" style="margin-top:28px">
+<section class="section wrap" style="padding-top:40px;padding-bottom:0">
+  <div class="grid grid-2">
     <div class="card reveal">
       <span class="label">What you get back</span>
       <ul class="marks" style="margin-top:6px">
-        <li><span class="m ok">✓</span><span>Up to 150 contacts per run, ranked Tier 1 (high-conviction) and Tier 2 (warm fits)</span></li>
-        <li><span class="m ok">✓</span><span>Partner-level name, firm, and title, not generic firm contacts</span></li>
-        <li><span class="m ok">✓</span><span>Verified work email and LinkedIn, multi-provider, never AI-generated</span></li>
-        <li><span class="m ok">✓</span><span>Match score and written rationale for every contact, audit trail per row</span></li>
-        <li><span class="m ok">✓</span><span>Delivered in 24 hours, one-click CSV export, yours to keep</span></li>
+        <li><span class="m ok">✓</span><span>Your network mapped and enriched to partner level, with the warmest path to each target surfaced</span></li>
+        <li><span class="m ok">✓</span><span>A fresh buyer or investor universe, ranked Tier 1 and Tier 2, sourced to your brief</span></li>
+        <li><span class="m ok">✓</span><span>Verified work email and LinkedIn on every contact, multi-provider, never AI-generated</span></li>
+        <li><span class="m ok">✓</span><span>A match score and written rationale per contact, full audit trail</span></li>
+        <li><span class="m ok">✓</span><span>Optional network intros on double opt-in, delivered to your workspace, CSV export, yours to keep</span></li>
       </ul>
     </div>
     <div class="card reveal">
       <span class="label">Why this beats DIY</span>
-      <p class="muted" style="font-size:14.5px;margin-top:10px">PitchBook, Grata, LinkedIn and an analyst show you who exists, filtered from a static database, and take 30–40 analyst hours per mandate on a $30K+ subscription stack.</p>
+      <p class="muted" style="font-size:14.5px;margin-top:10px">PitchBook, Grata, LinkedIn and an analyst show you who exists, filtered from a static database, and take 30 to 40 analyst hours per mandate on a $30K+ subscription stack.</p>
       <p class="muted" style="font-size:14.5px">Iceberg runs deal-led search instead: custom-sourced from comparable deals that actually closed, walked back to the partner who led each one, then verified.</p>
       <div class="callout" style="margin-bottom:0"><div class="head">Quality floor</div><div class="body">No contact under a 50/100 match score ever ships. Enforced in code, not a guideline.</div></div>
     </div>
   </div>
 </section>
 
-<section class="section wrap" style="padding-top:0">
+<section class="section wrap" style="padding-top:40px;padding-bottom:0">
   <div class="grid grid-2 reveal" style="align-items:center;gap:34px">
     <div>
       <span class="label">See what the output looks like</span>
       <h2 style="font-size:26px;margin:10px 0 14px">Effectiveness report &amp; sample universe</h2>
-      <p class="muted" style="font-size:14.5px;margin:0">For a deeper look at the engine behind the list, including throughput math, the comparison matrix against PitchBook and DIY, the verification pipeline, and the per-contact audit trail, read the full effectiveness report.</p>
+      <p class="muted" style="font-size:14.5px;margin:0">The engine behind the pack: throughput math, the comparison against PitchBook and DIY, the verification pipeline, and the per-contact audit trail.</p>
     </div>
-    <div style="display:flex;justify-content:flex-end">
-      <a class="btn btn-primary btn-lg" href="https://iceberg-effectiveness-report.netlify.app/" target="_blank" rel="noopener">Read the effectiveness report →</a>
+    <div style="display:flex;flex-direction:column;gap:10px;align-items:stretch">
+      <a class="btn btn-primary btn-lg" href="Iceberg-Sample-Mandate-Pack.xlsx" download style="text-align:center">Download a sample pack →</a>
+      <a class="btn btn-ghost btn-lg" href="https://iceberg-effectiveness-report.netlify.app/" target="_blank" rel="noopener" style="text-align:center">Read the effectiveness report →</a>
     </div>
   </div>
 </section>
 
-<section class="section wrap" style="padding-top:0">
+<section class="section wrap" style="padding-top:40px;padding-bottom:0">
+  <span class="label reveal">Data and privacy</span>
+  <h2 class="reveal" style="font-size:28px;margin-bottom:8px">Your data stays yours.</h2>
+  <p class="muted reveal" style="max-width:780px">A one-off order, handled with the same commitments as everything else we do.</p>
+  <div class="card reveal" style="margin-top:24px">
+    <ul class="marks">
+      <li><span class="m ok">✓</span><div><strong>Walled to you.</strong> Your data is used only to fill your order. Never pooled with another firm, never sold, never used to train AI models.</div></li>
+      <li><span class="m ok">✓</span><div><strong>Uploads stay private.</strong> Anything you attach is used only to run your order and is not added to any shared layer.</div></li>
+      <li><span class="m ok">✓</span><div><strong>Yours to keep or remove.</strong> Full export in CSV and JSON, and deletion on request.</div></li>
+    </ul>
+  </div>
+  <p class="muted reveal" style="font-size:13px;margin-top:16px">Ownership, no AI training, export and deletion, breach SLA, subprocessors and governing law are set out in full in our <a href="data-privacy.html" style="color:var(--green)">data and privacy policy</a>.</p>
+</section>
+
+<section class="section wrap" style="padding-top:48px">
   <div class="card card-hl reveal" style="padding:38px;text-align:center">
-    <span class="label">Custom scope</span>
-    <h2 style="font-size:28px;margin:10px 0 12px">Need something custom?</h2>
-    <p class="muted" style="max-width:680px;margin:0 auto 22px;font-size:15px">Global universe maps, named-people research, anything bespoke. Standard runs cover most mandates. If you need a full global buyer universe mapped across multiple geographies and buyer types, or you have named people you want researched (their deal history, current firm, recent activity), book a call. We will scope it, quote it, and confirm before any work starts.</p>
+    <span class="label">Get started</span>
+    <h2 style="font-size:30px;margin:10px 0 12px">Send us the mandate.</h2>
+    <p class="muted" style="max-width:640px;margin:0 auto 22px;font-size:15px">Book a call and we will scope it, quote it, and confirm before any work starts. Or email the brief straight to <a href="mailto:query@iceberg.software" style="color:var(--green)">query@iceberg.software</a>.</p>
     <a class="btn btn-primary btn-lg" href="https://meetings.hubspot.com/jfairweather" target="_blank" rel="noopener">Book a call to scope →</a>
   </div>
 </section>
-
-<section class="section wrap" style="padding-top:0">
-  <div class="reveal" style="text-align:center;margin-bottom:30px">
-    <span class="label">Enterprise-grade</span>
-    <h2 style="font-size:30px;margin-top:8px">Iceberg's commitments on data, security, and continuity.</h2>
-    <p class="muted" style="max-width:700px;margin:14px auto 0">These terms apply to every engagement, standard order or custom scope. Procurement-friendly by default, no enterprise tier required.</p>
-  </div>
-  <div class="card reveal" style="padding:36px">
-    <div class="ent-grid">
-      <div class="ent-item">
-        <h4>Ownership &amp; derivative works</h4>
-        <p>All contacts, mandate materials, and activity uploaded by the adviser remain the property of the adviser. Any Iceberg-generated enrichment tied to the adviser's contacts, including derivative works such as AI-generated scoring and target universes, constitutes work product and is the sole property of the adviser.</p>
-      </div>
-      <div class="ent-item">
-        <h4>Restricted use &amp; no AI training</h4>
-        <p>Adviser data is used solely to provide the Iceberg service. Iceberg expressly prohibits use of adviser data for training AI models, data aggregation, or resale to third parties. No use, including aggregated or anonymised versions, for benchmarking, product development, or marketing without explicit written consent.</p>
-      </div>
-      <div class="ent-item">
-        <h4>Data security &amp; cross-border handling</h4>
-        <p>Iceberg adheres to the Australian Privacy Act and Australian Privacy Principles (APPs) as the primary framework, alongside GDPR-compliant protocols for EU-facing advisers and CCPA compliance for California-based entities.</p>
-      </div>
-      <div class="ent-item">
-        <h4>Incident notification</h4>
-        <p>In the event of a confirmed data security breach, Iceberg guarantees a 24-hour breach notification SLA from time of discovery.</p>
-      </div>
-      <div class="ent-item">
-        <h4>Export &amp; deletion</h4>
-        <p>On contract termination, the adviser has thirty (30) days to request a full export of uploaded data and Iceberg-generated enrichments, provided in CSV and JSON. After that window, or on immediate written request, Iceberg guarantees full deletion within fourteen (14) days with a certified destruction attestation.</p>
-      </div>
-      <div class="ent-item">
-        <h4>Subprocessors</h4>
-        <p>Iceberg uses strict-compliance subprocessors including Google Gemini, OpenAI, and Exa Search. Iceberg provides thirty (30) days' prior written notice before adding any non-US AI provider.</p>
-      </div>
-      <div class="ent-item">
-        <h4>Business continuity</h4>
-        <p>Iceberg commits to a 4-hour Recovery Time Objective (RTO) and a 24-hour Recovery Point Objective (RPO).</p>
-      </div>
-      <div class="ent-item">
-        <h4>Governing law &amp; liability</h4>
-        <p>This agreement is governed by the laws of <strong data-region data-au="Queensland, Australia" data-us="the State of California">Queensland, Australia</strong>.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
 <footer class="footer">
   <div class="wrap">
     <div class="brand">
       <svg width="28" height="28" viewBox="0 0 42 43" fill="none" xmlns="http://www.w3.org/2000/svg"><rect y="0.5" width="42" height="42" rx="10" fill="#22C55E"/><path fill-rule="evenodd" clip-rule="evenodd" d="M31.0736 20.271C28.9146 17.5524 26.847 15.1037 26.4795 14.8296C26.1118 14.5554 25.4715 14.2557 25.0563 14.1636C24.0704 13.9447 16.8718 13.9458 15.8844 14.165C15.4659 14.2579 14.7919 14.5929 14.3866 14.9094C13.7597 15.399 6.34604 24.5298 6.01428 25.2207C5.91534 25.4271 6.27773 25.4523 8.79424 25.4144L9.24488 25.4076C10.7448 25.3851 12.1061 24.5252 12.7707 23.1804L14.0342 20.6241L15.2793 18.105C15.9535 16.7408 17.3434 15.8773 18.8652 15.8773L20.4736 15.8773L22.082 15.8773C23.6037 15.8773 24.9936 16.7408 25.6679 18.105L26.913 20.6241L28.1766 23.1807C28.8412 24.5253 30.2022 25.3852 31.7019 25.4079L32.1297 25.4144C33.7087 25.4382 35.0004 25.4029 35 25.3359C34.9996 25.2689 33.2328 22.9897 31.0736 20.271ZM26.4993 24.4016C25.0747 21.5383 23.7015 18.9719 23.4479 18.6987C22.1165 17.264 18.8314 17.278 17.4824 18.724C17.0505 19.1869 11.8359 29.4621 11.8359 29.8501C11.8359 29.9383 13.0012 30 14.6692 30C17.1997 30 17.5128 29.9707 17.5994 29.7254C17.6528 29.5744 18.0758 27.1734 18.5393 24.3902L19.203 20.406C19.3064 19.7848 19.8438 19.3295 20.4736 19.3295C21.1033 19.3295 21.6407 19.7848 21.7442 20.406L22.4078 24.3902C22.8713 27.1734 23.2944 29.5744 23.3478 29.7254C23.4343 29.9707 23.7474 30 26.2779 30C28.4195 30 29.1087 29.9521 29.1005 29.8039C29.0946 29.6961 27.924 27.2649 26.4993 24.4016Z" fill="#070E1C"/></svg>
       Iceberg
     </div>
-    Iceberg Intelligence Pty Ltd &nbsp;·&nbsp; iceberg.software &nbsp;·&nbsp; <a href="mailto:jock@iceberg.software">jock@iceberg.software</a>
+    Iceberg Intelligence Pty Ltd &nbsp;·&nbsp; iceberg.software &nbsp;·&nbsp; <a href="mailto:jock@iceberg.software">jock@iceberg.software</a> &nbsp;·&nbsp; <a href="data-privacy.html">Data &amp; Privacy</a>
   </div>
 </footer>
 
 <script>
-// app.js — shared interactions
-
-// 0) Nav fill on scroll (brief: transparent-to-filled)
 (function(){
   function onScroll(){ document.body.classList.toggle('scrolled', window.scrollY > 24); }
   window.addEventListener('scroll', onScroll, { passive:true });
   document.addEventListener('DOMContentLoaded', onScroll);
 })();
-
-// 1) Fade-up on scroll (IntersectionObserver), staggered per section
 (function () {
   function run() {
     var els = document.querySelectorAll('.reveal');
-    if (!('IntersectionObserver' in window)) {
-      els.forEach(function (e) { e.classList.add('in'); });
-      return;
-    }
+    if (!('IntersectionObserver' in window)) { els.forEach(function (e) { e.classList.add('in'); }); return; }
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (en) {
         if (en.isIntersecting) {
-          var sibs = Array.prototype.slice.call(
-            en.target.parentElement.querySelectorAll(':scope > .reveal')
-          );
+          var sibs = Array.prototype.slice.call(en.target.parentElement.querySelectorAll(':scope > .reveal'));
           var i = Math.max(0, sibs.indexOf(en.target));
           en.target.style.transitionDelay = (i * 70) + 'ms';
-          en.target.classList.add('in');
-          io.unobserve(en.target);
+          en.target.classList.add('in'); io.unobserve(en.target);
         }
       });
     }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
     els.forEach(function (e) { io.observe(e); });
   }
-  if (document.readyState !== 'loading') run();
-  else document.addEventListener('DOMContentLoaded', run);
+  if (document.readyState !== 'loading') run(); else document.addEventListener('DOMContentLoaded', run);
 })();
-
-// 2) AU / US region switch. Swaps [data-region] text between data-au / data-us.
 (function () {
   function setRegion(region) {
-    document.querySelectorAll('[data-region]').forEach(function (el) {
-      el.textContent = el.getAttribute('data-' + region) || el.textContent;
-    });
-    document.querySelectorAll('.region button').forEach(function (b) {
-      b.classList.toggle('active', b.dataset.r === region);
-    });
+    document.querySelectorAll('[data-region]').forEach(function (el) { el.textContent = el.getAttribute('data-' + region) || el.textContent; });
     try { localStorage.setItem('iceberg-region', region); } catch (e) {}
   }
   document.addEventListener('DOMContentLoaded', function () {
-    var saved = 'au';
-    try { saved = localStorage.getItem('iceberg-region') || 'au'; } catch (e) {}
+    var saved = 'au'; try { saved = localStorage.getItem('iceberg-region') || 'au'; } catch (e) {}
     setRegion(saved);
-    document.querySelectorAll('.region button').forEach(function (b) {
-      b.addEventListener('click', function () { setRegion(b.dataset.r); });
-    });
-  });
-})();
-
-</script>
-<script>
-(function(){
-  var UNIT = 495, MAX = 20, MIN = 1;
-  var state = { types: 1, runs: 1 };
-  function fmt(n){ return '$' + n.toLocaleString('en-AU'); }
-
-  function renderCategories(){
-    var box = document.getElementById('category-inputs');
-    if(!box) return;
-    var existing = Array.prototype.slice.call(box.querySelectorAll('input.cat')).map(function(i){return i.value});
-    var ph = ['Strategic acquirers','PE','Family office','VC','Corporate VCs','Sovereign funds','Cross-border strategics','Sector specialists','Lenders','Growth equity','Late-stage VCs','Pension funds','Endowments','Insurance','Holding companies','Operating partners','Search funds','Industry specialists','Cross-border strategics','Other'];
-    var pl = document.getElementById('cat-plural');
-    if(pl) pl.textContent = state.types > 1 ? 's' : '';
-    var h='';
-    for(var i=0;i<state.types;i++){
-      var v=(existing[i]||'').replace(/"/g,'&quot;');
-      var p=ph[i]||('Contact type '+(i+1));
-      h+='<div class="field" style="margin:0"><label>Type '+(i+1)+'</label><input type="text" name="category_'+(i+1)+'" class="cat" required placeholder="'+p+'" value="'+v+'"></div>';
-    }
-    box.innerHTML = h;
-  }
-  function render(){
-    var total = state.runs * state.types * UNIT;
-    var contacts = state.runs * state.types * 150;
-    document.getElementById('types-val').textContent = state.types;
-    document.getElementById('runs-val').textContent = state.runs;
-    var _t = document.getElementById('calc-total'); var _newTotal = fmt(total); if(_t.textContent !== _newTotal){ _t.textContent = _newTotal; _t.classList.remove('pulse-anim'); void _t.offsetWidth; _t.classList.add('pulse-anim'); } else { _t.textContent = _newTotal; }
-    document.getElementById('btn-amount').textContent = fmt(total);
-    document.getElementById('calc-desc').textContent =
-      state.types + (state.types>1?' types':' type') + ' × ' + state.runs + (state.runs>1?' runs':' run') +
-      ' · up to ' + contacts.toLocaleString('en-AU') + ' contacts';
-    document.getElementById('f-runs').value = state.runs;
-    document.getElementById('f-types').value = state.types;
-    document.getElementById('f-total').value = total;
-    document.getElementById('f-contacts').value = contacts;
-    document.querySelectorAll('.stepper').forEach(function(s){
-      var k = s.dataset.key;
-      s.querySelector('[data-step="-1"]').disabled = state[k] <= MIN;
-      s.querySelector('[data-step="1"]').disabled = state[k] >= MAX;
-    });
-    renderCategories();
-  }
-  // toggle-group wiring
-  document.querySelectorAll('.toggle-grp').forEach(function(grp){
-    var hid = document.getElementById(grp.dataset.target);
-    grp.querySelectorAll('button').forEach(function(b){
-      b.addEventListener('click', function(){
-        grp.querySelectorAll('button').forEach(function(x){ x.classList.remove('active'); });
-        b.classList.add('active');
-        if(hid) hid.value = b.dataset.v;
-      });
-    });
-  });
-  document.querySelectorAll('.stepper button').forEach(function(btn){
-    btn.addEventListener('click', function(){
-      var key = btn.closest('.stepper').dataset.key;
-      state[key] = Math.max(MIN, Math.min(MAX, state[key] + parseInt(btn.dataset.step,10)));
-      render();
-    });
-  });
-  render();
-
-  var params = new URLSearchParams(window.location.search);
-  if(params.get('status') === 'success') document.getElementById('banner-ok').classList.add('show');
-  if(params.get('status') === 'cancelled') document.getElementById('banner-cancel').classList.add('show');
-
-  function showError(msg){
-    var b = document.getElementById('banner-err');
-    b.textContent = msg || 'Something went wrong. Please try again.';
-    b.classList.add('show');
-    b.scrollIntoView({behavior:'smooth', block:'center'});
-  }
-
-  var form = document.getElementById('order-form');
-  var btn = document.getElementById('submit-btn');
-  form.addEventListener('submit', async function(e){
-    e.preventDefault();
-    btn.disabled = true;
-    var label = btn.innerHTML;
-    btn.textContent = 'Processing…';
-    try { await fetch('/', { method:'POST', body: new FormData(form) }); } catch(err){}
-    try {
-      var res = await fetch('/.netlify/functions/create-checkout', {
-        method:'POST', headers:{'Content-Type':'application/json'},
-        body: JSON.stringify({ runs: state.runs, types: state.types,
-          reference: (form.firm.value || '') + ' · ' + (form.email.value || '') })
-      });
-      var data = await res.json();
-      if(res.ok && data.url){ window.location.href = data.url; return; }
-      showError(data.error || 'Could not start checkout.');
-    } catch(err){ showError('Network error reaching checkout. Please try again.'); }
-    btn.disabled = false; btn.innerHTML = label;
   });
 })();
 </script>

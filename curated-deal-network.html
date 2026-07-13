@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Iceberg — Curated Deal Network</title>
+<title>Iceberg · Curated Deal Network</title>
 <meta name="description" content="Curated Deal Network. Application-based. Iceberg delivers sourcing, enrichment, warm paths, and intros weekly across your mandates. Success fee only.">
 <style>
 /* ============================================================
@@ -285,6 +285,24 @@ details.terms .terms-body strong{color:var(--text-3)}
 .pcard.pop .prate{color:rgba(7,14,28,.65)}
 .pcard.pop .punit-bot{color:rgba(7,14,28,.7)}
 .pcard .pfeat{margin-top:20px}
+
+/* ---------- iceberg block ---------- */
+.ice{display:grid;grid-template-columns:280px 1fr;gap:40px;align-items:center}
+@media(max-width:760px){.ice{grid-template-columns:1fr;gap:28px;text-align:center}}
+.ice-vis{background:radial-gradient(420px 320px at 50% 32%,rgba(56,189,248,.12),transparent 70%);border:1px solid var(--line);border-radius:14px;padding:18px;display:grid;place-items:center}
+.ice-zone{margin-top:18px}
+.ice-zone:first-of-type{margin-top:0}
+.ice-cap{display:block;font-family:var(--font-mono);font-weight:500;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+.ice-chips{display:flex;flex-wrap:wrap;gap:8px}
+@media(max-width:760px){.ice-chips{justify-content:center}}
+.ice-chip{font-size:13.5px;color:var(--text-3);background:var(--panel-2);border:1px solid var(--line);border-radius:8px;padding:7px 13px}
+.ice-h{font-size:clamp(22px,2.6vw,28px);margin:0 0 6px}
+
+/* ---------- enterprise grid (match on-demand) ---------- */
+.ent-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px 38px}
+.ent-item h4{font-family:var(--font-head);font-size:15.5px;color:var(--text);margin:0 0 6px;letter-spacing:-.01em}
+.ent-item p{font-size:14px;color:var(--muted);margin:0;line-height:1.6}
+@media(max-width:760px){.ent-grid{grid-template-columns:1fr;gap:22px}}
 </style>
 </head>
 <body>
@@ -304,12 +322,12 @@ details.terms .terms-body strong{color:var(--text-3)}
 </nav>
 
 <header class="hero wrap" style="padding-bottom:24px">
-  <span class="eyebrow reveal">Curated Deal Network</span>
-  <h1 class="reveal" style="font-size:clamp(34px,5.6vw,56px)">Apply to join.<br><em style="color:var(--green);font-style:italic">Success fee only.</em></h1>
-  <p class="sub reveal">A network of select sell-side advisers Iceberg works with on a success-fee-aligned basis. We deliver contact sourcing, enrichment, warm path mapping, and introductions weekly across your active mandates. No upfront cost, no retainer. We earn 5% of your success fee, paid only when a mandate closes.</p>
+  <span class="eyebrow reveal">Curated Deal Network · Success fee only</span>
+  <h1 class="reveal" style="font-size:clamp(34px,5.6vw,56px)">The bench behind<br><em style="color:var(--green);font-style:italic">every mandate you run.</em></h1>
+  <p class="sub reveal">Advisers already stitch together Affinity, Claude and PitchBook to work a deal. Iceberg is all three in one place, plus the one thing none of them give you: a live, cross-adviser deal network. You keep the relationships, the calls and the close. We do everything underneath, and we only earn when the mandate closes.</p>
   <div class="reveal" style="display:flex;gap:12px;justify-content:center;align-items:center;flex-wrap:wrap;margin-top:22px">
     <a class="btn btn-primary btn-lg" href="https://meetings.hubspot.com/jfairweather" target="_blank" rel="noopener">Apply to join →</a>
-    <a class="btn btn-ghost btn-lg" href="#how">How it works →</a>
+    <a class="btn btn-ghost btn-lg" href="#pack">See what lands in your inbox →</a>
   </div>
 </header>
 
@@ -323,6 +341,99 @@ details.terms .terms-body strong{color:var(--text-3)}
   <p class="muted center reveal" style="font-size:13px;letter-spacing:.04em;margin-top:18px">Members from Goldman Sachs, PwC Capital, KPMG, Macquarie, Morgans and more.</p>
 </section>
 
+<section class="section wrap" id="pack" style="padding-top:48px;padding-bottom:0">
+  <span class="label reveal">What you get back</span>
+  <h2 class="reveal" style="font-size:30px;margin-bottom:8px">One mandate in. A full execution roadmap back.</h2>
+  <p class="muted reveal" style="max-width:780px">For every mandate you run, one enriched, reasoned, tiered pack lands in your inbox. Not a raw list. The roadmap to execute the deal, with every contact ready to call.</p>
+
+  <div class="grid grid-2 reveal" style="margin-top:24px">
+    <div class="card">
+      <span class="tag tag-blue" style="margin-bottom:12px">01</span>
+      <h4 style="margin-bottom:6px">Your database, cleaned and mapped</h4>
+      <p class="muted" style="font-size:14.5px;margin:0">Your contacts deduplicated, structured and mapped against the live market, so your own book is finally working for you.</p>
+    </div>
+    <div class="card">
+      <span class="tag tag-blue" style="margin-bottom:12px">02</span>
+      <h4 style="margin-bottom:6px">Who you already know</h4>
+      <p class="muted" style="font-size:14.5px;margin:0">See who in your network can reach each target, so the warm path is in front of you before you pick up the phone.</p>
+    </div>
+    <div class="card">
+      <span class="tag tag-blue" style="margin-bottom:12px">03</span>
+      <h4 style="margin-bottom:6px">A fresh universe, sourced to your brief</h4>
+      <p class="muted" style="font-size:14.5px;margin:0">New buyers and counterparties built to this mandate, not just the names already in your book.</p>
+    </div>
+    <div class="card">
+      <span class="tag tag-blue" style="margin-bottom:12px">04</span>
+      <h4 style="margin-bottom:6px">Cross-network intros, when you want them</h4>
+      <p class="muted" style="font-size:14.5px;margin:0">Paths to people you cannot reach alone, opened through the wider Iceberg network on double opt-in. Your data is never exposed without your say-so.</p>
+    </div>
+  </div>
+
+  <div class="accent reveal" style="margin-top:22px">
+    <strong>Every contact enriched across all of it:</strong> work email, direct phone, title and firm detail. Tiered and prioritised, with draft outreach ready for you to review and send. You check it and make the calls. We do the grunt work underneath.
+  </div>
+
+  <div class="card card-hl reveal" style="margin-top:22px;text-align:center;padding:32px 28px">
+    <div class="price-big">~68 hours · ~$14k</div>
+    <p class="price-sub" style="font-size:15px;margin-top:8px">of analyst work per mandate, done for you from day one. And you keep 95%.</p>
+  </div>
+  <div class="reveal" style="text-align:center;margin-top:20px"><a class="btn btn-ghost btn-lg" href="Iceberg-Sample-Mandate-Pack.xlsx" download>Download a sample mandate pack →</a></div>
+</section>
+
+<section class="section wrap" style="padding-top:40px;padding-bottom:0">
+  <span class="label reveal">What it is</span>
+  <h2 class="reveal" style="font-size:30px;margin-bottom:10px">Find the right person for a deal. <span class="cyan">Through who you know.</span></h2>
+  <p class="muted reveal" style="max-width:860px;font-size:16.5px;line-height:1.6">Iceberg maps your relationships against the live market and reasons over both, so the answer to who can reach this buyer takes minutes, not days. The more deals run through the network, the sharper that answer gets for everyone in it.</p>
+
+  <div class="card reveal" style="margin-top:28px;padding:36px">
+    <div class="ice">
+      <div class="ice-vis">
+        <svg width="220" height="300" viewBox="0 0 240 320" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Iceberg: a small tip above the waterline, a large mass below">
+          <defs>
+            <linearGradient id="iceTip" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#F8FBFF"/>
+              <stop offset="1" stop-color="#CFE6F7"/>
+            </linearGradient>
+            <linearGradient id="iceBody" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#5FA8D6" stop-opacity="0.6"/>
+              <stop offset="1" stop-color="#0B1F3A" stop-opacity="0.12"/>
+            </linearGradient>
+          </defs>
+          <rect x="14" y="118" width="212" height="190" rx="10" fill="rgba(56,189,248,0.04)" stroke="rgba(56,189,248,0.14)"/>
+          <line x1="14" y1="118" x2="226" y2="118" stroke="rgba(56,189,248,0.55)" stroke-width="1.5" stroke-dasharray="3 5"/>
+          <polygon points="120,28 96,118 144,118" fill="url(#iceTip)"/>
+          <polygon points="103,118 120,107 137,118" fill="#0B1424"/>
+          <polygon points="96,118 144,118 188,196 120,300 52,210" fill="url(#iceBody)" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+          <path d="M120 118 L120 300 M96 118 L188 196 M144 118 L52 210" stroke="rgba(255,255,255,0.10)" stroke-width="1" fill="none"/>
+        </svg>
+      </div>
+      <div>
+        <h3 class="ice-h">The app is the tip. The <span class="cyan">data</span> is the iceberg.</h3>
+        <p class="muted" style="margin:0 0 22px;max-width:560px">Most tools sell you screens. The value is the asset underneath them.</p>
+        <div class="ice-zone">
+          <span class="ice-cap">Above the waterline · what you touch</span>
+          <div class="ice-chips">
+            <span class="ice-chip">Onboarding</span>
+            <span class="ice-chip">Mandates</span>
+            <span class="ice-chip">Suggestions</span>
+            <span class="ice-chip">Assistant</span>
+          </div>
+        </div>
+        <div class="ice-zone">
+          <span class="ice-cap">Below the waterline · what powers it</span>
+          <div class="ice-chips">
+            <span class="ice-chip">Your relationships</span>
+            <span class="ice-chip">Market data</span>
+            <span class="ice-chip">The map between them</span>
+            <span class="ice-chip">Retrieval</span>
+          </div>
+        </div>
+        <div class="accent cyan-accent" style="margin:22px 0 0"><strong>Small app, deep data.</strong> The work that wins the mandate happens below the waterline.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="section wrap" id="how" style="padding-top:48px">
   <div class="center" style="margin-bottom:30px">
     <span class="label reveal">How it works</span>
@@ -333,19 +444,6 @@ details.terms .terms-body strong{color:var(--text-3)}
     <div class="step"><div class="n">02</div><h4>Onboard</h4><p>If we're a fit, you join the network. We set up your workspace and ingest your blackbook.</p></div>
     <div class="step on"><div class="n">03 · Iceberg</div><h4>Weekly delivery</h4><p>Sourcing, enrichment, warm paths, and intros on each active mandate. Every week, up to 12 weeks per mandate.</p></div>
     <div class="step"><div class="n">04</div><h4>Close</h4><p>When a mandate closes, Iceberg earns 5% of your success fee. Aligned by design.</p></div>
-  </div>
-</section>
-
-<section class="section wrap" style="padding-top:0">
-  <span class="label reveal">What's included</span>
-  <h2 class="reveal" style="font-size:28px;margin-bottom:18px">Everything we deliver across your mandates.</h2>
-  <div class="card reveal">
-    <div class="feature"><div><h4>Contact sourcing, weekly</h4></div><p>A ranked, verified buyer or investor universe maintained week to week for up to 12 weeks per mandate. New names from conversations and market shifts are added live.</p></div>
-    <div class="feature"><div><h4>Contact enrichment to partner level</h4></div><p>Not generic firm contacts. The specific decision-maker, their deal history, verified work email and LinkedIn, and the angle to lead with on every contact.</p></div>
-    <div class="feature"><div><h4>Warm path mapping</h4></div><p>Cross-referenced against your network and the broader Iceberg network to surface the shortest, warmest path to every target.</p></div>
-    <div class="feature"><div><h4>Introductions facilitated end to end</h4></div><p>We draft intros and coordinate the warm path so the meeting actually happens. Outreach drafted on your behalf when you want it.</p></div>
-    <div class="feature"><div><h4>Iceberg workspace and CRM included</h4></div><p>All deliverables sit inside your Iceberg workspace, with CRM, audit trail, and one-click CSV export, yours to keep.</p></div>
-    <div class="feature"><div><h4>Up to 12-week mandate sprint</h4></div><p>We commit to running the cadence for up to 12 weeks per mandate. Longer if the deal warrants and the work is paying off.</p></div>
   </div>
 </section>
 
@@ -446,7 +544,22 @@ details.terms .terms-body strong{color:var(--text-3)}
       <div style="font-size:13px;color:var(--green);margin-top:12px">5 seats open.</div>
     </div>
   </div>
-  <p class="muted reveal" style="font-size:13px;margin-top:16px">Contact intelligence is shared across the network only on double opt-in. Your data is never exposed without your explicit consent.</p>
+  <p class="muted reveal" style="font-size:13px;margin-top:16px">Every mandate feeds one shared map of who is out there, never your relationships or your live deals. More on how your data is handled below.</p>
+</section>
+
+<section class="section wrap" id="data" style="padding-top:0">
+  <span class="label reveal">Data and privacy</span>
+  <h2 class="reveal" style="font-size:28px;margin-bottom:8px">Your book stays yours.</h2>
+  <p class="muted reveal" style="max-width:780px">The network only works if your relationships are safe. Here is exactly how that stays true.</p>
+  <div class="card reveal" style="margin-top:24px">
+    <ul class="marks">
+      <li><span class="m ok">✓</span><div><strong>Two layers, kept apart.</strong> A shared market layer of who is out there, read-only to you, and your private workspace: your mailbox, LinkedIn, notes and live mandates. They never mix.</div></li>
+      <li><span class="m ok">✓</span><div><strong>Private stays private.</strong> Your mailbox, LinkedIn and mandates are walled to your firm. No other adviser sees who you know or what you are working on.</div></li>
+      <li><span class="m ok">✓</span><div><strong>The market is shared, your book is not.</strong> The network's value is one shared map of who is out there. What you contribute to it is your choice, and it never carries your relationship or deal context.</div></li>
+      <li><span class="m ok">✓</span><div><strong>Intros only on double opt-in.</strong> A cross-network introduction happens only when both advisers agree. Your relationship is never exposed without your say-so.</div></li>
+    </ul>
+  </div>
+  <p class="muted reveal" style="font-size:13px;margin-top:16px">No AI training on your contacts. Read our full <a href="data-privacy.html" style="color:var(--green)">data and privacy overview</a>, or request a copy for your procurement team.</p>
 </section>
 
 <section class="section wrap" style="padding-top:0">
@@ -476,51 +589,7 @@ details.terms .terms-body strong{color:var(--text-3)}
     </div>
     <div class="card">
       <h4 style="margin-bottom:6px">Your data</h4>
-      <p class="muted" style="font-size:14.5px;margin:0">Always yours. Export anytime. No AI training on your contacts. Shared only on double opt-in.</p>
-    </div>
-  </div>
-</section>
-
-<section class="section wrap" style="padding-top:0">
-  <div class="reveal" style="text-align:center;margin-bottom:30px">
-    <span class="label">Enterprise-grade</span>
-    <h2 style="font-size:30px;margin-top:8px">Iceberg's commitments on data, security, and continuity.</h2>
-    <p class="muted" style="max-width:700px;margin:14px auto 0">These terms apply to every engagement, standard order or custom scope. Procurement-friendly by default, no enterprise tier required.</p>
-  </div>
-  <div class="card reveal" style="padding:36px">
-    <div class="ent-grid">
-      <div class="ent-item">
-        <h4>Ownership &amp; derivative works</h4>
-        <p>All contacts, mandate materials, and activity uploaded by the adviser remain the property of the adviser. Any Iceberg-generated enrichment tied to the adviser's contacts, including derivative works such as AI-generated scoring and target universes, constitutes work product and is the sole property of the adviser.</p>
-      </div>
-      <div class="ent-item">
-        <h4>Restricted use &amp; no AI training</h4>
-        <p>Adviser data is used solely to provide the Iceberg service. Iceberg expressly prohibits use of adviser data for training AI models, data aggregation, or resale to third parties. No use, including aggregated or anonymised versions, for benchmarking, product development, or marketing without explicit written consent.</p>
-      </div>
-      <div class="ent-item">
-        <h4>Data security &amp; cross-border handling</h4>
-        <p>Iceberg adheres to the Australian Privacy Act and Australian Privacy Principles (APPs) as the primary framework, alongside GDPR-compliant protocols for EU-facing advisers and CCPA compliance for California-based entities.</p>
-      </div>
-      <div class="ent-item">
-        <h4>Incident notification</h4>
-        <p>In the event of a confirmed data security breach, Iceberg guarantees a 24-hour breach notification SLA from time of discovery.</p>
-      </div>
-      <div class="ent-item">
-        <h4>Export &amp; deletion</h4>
-        <p>On contract termination, the adviser has thirty (30) days to request a full export of uploaded data and Iceberg-generated enrichments, provided in CSV and JSON. After that window, or on immediate written request, Iceberg guarantees full deletion within fourteen (14) days with a certified destruction attestation.</p>
-      </div>
-      <div class="ent-item">
-        <h4>Subprocessors</h4>
-        <p>Iceberg uses strict-compliance subprocessors including Google Gemini, OpenAI, and Exa Search. Iceberg provides thirty (30) days' prior written notice before adding any non-US AI provider.</p>
-      </div>
-      <div class="ent-item">
-        <h4>Business continuity</h4>
-        <p>Iceberg commits to a 4-hour Recovery Time Objective (RTO) and a 24-hour Recovery Point Objective (RPO).</p>
-      </div>
-      <div class="ent-item">
-        <h4>Governing law &amp; liability</h4>
-        <p>This agreement is governed by the laws of <strong data-region data-au="Queensland, Australia" data-us="the State of California">Queensland, Australia</strong>.</p>
-      </div>
+      <p class="muted" style="font-size:14.5px;margin:0">Always yours. Export anytime. No AI training on your contacts. Your relationships stay private; what you contribute to the shared market is your choice.</p>
     </div>
   </div>
 </section>
@@ -531,7 +600,7 @@ details.terms .terms-body strong{color:var(--text-3)}
       <svg width="28" height="28" viewBox="0 0 42 43" fill="none" xmlns="http://www.w3.org/2000/svg"><rect y="0.5" width="42" height="42" rx="10" fill="#22C55E"/><path fill-rule="evenodd" clip-rule="evenodd" d="M31.0736 20.271C28.9146 17.5524 26.847 15.1037 26.4795 14.8296C26.1118 14.5554 25.4715 14.2557 25.0563 14.1636C24.0704 13.9447 16.8718 13.9458 15.8844 14.165C15.4659 14.2579 14.7919 14.5929 14.3866 14.9094C13.7597 15.399 6.34604 24.5298 6.01428 25.2207C5.91534 25.4271 6.27773 25.4523 8.79424 25.4144L9.24488 25.4076C10.7448 25.3851 12.1061 24.5252 12.7707 23.1804L14.0342 20.6241L15.2793 18.105C15.9535 16.7408 17.3434 15.8773 18.8652 15.8773L20.4736 15.8773L22.082 15.8773C23.6037 15.8773 24.9936 16.7408 25.6679 18.105L26.913 20.6241L28.1766 23.1807C28.8412 24.5253 30.2022 25.3852 31.7019 25.4079L32.1297 25.4144C33.7087 25.4382 35.0004 25.4029 35 25.3359C34.9996 25.2689 33.2328 22.9897 31.0736 20.271ZM26.4993 24.4016C25.0747 21.5383 23.7015 18.9719 23.4479 18.6987C22.1165 17.264 18.8314 17.278 17.4824 18.724C17.0505 19.1869 11.8359 29.4621 11.8359 29.8501C11.8359 29.9383 13.0012 30 14.6692 30C17.1997 30 17.5128 29.9707 17.5994 29.7254C17.6528 29.5744 18.0758 27.1734 18.5393 24.3902L19.203 20.406C19.3064 19.7848 19.8438 19.3295 20.4736 19.3295C21.1033 19.3295 21.6407 19.7848 21.7442 20.406L22.4078 24.3902C22.8713 27.1734 23.2944 29.5744 23.3478 29.7254C23.4343 29.9707 23.7474 30 26.2779 30C28.4195 30 29.1087 29.9521 29.1005 29.8039C29.0946 29.6961 27.924 27.2649 26.4993 24.4016Z" fill="#070E1C"/></svg>
       Iceberg
     </div>
-    Iceberg Intelligence Pty Ltd &nbsp;·&nbsp; iceberg.software &nbsp;·&nbsp; <a href="mailto:jock@iceberg.software">jock@iceberg.software</a>
+    Iceberg Intelligence Pty Ltd &nbsp;·&nbsp; iceberg.software &nbsp;·&nbsp; <a href="mailto:jock@iceberg.software">jock@iceberg.software</a> &nbsp;·&nbsp; <a href="data-privacy.html">Data &amp; Privacy</a>
   </div>
 </footer>
 
